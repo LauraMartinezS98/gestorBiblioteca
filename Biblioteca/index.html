@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistema de Gestión de Biblioteca Digital</title>
+</head>
+
+<body>
+
+    <div id="contenedor-app" class="contenedor-app">
+        <header>
+            <h1 class="titulo">~Gestión de Biblioteca Digital~</h1>
+        </header>
+
+        <!-- Contenedor Principal -->
+        <div class="contenedor-principal">
+
+            <!-- Columna 1  -->
+            <div class="columna-izquierda">
+                
+                <!-- Tarjeta de Perfil y Acciones -->
+                <div class="tarjeta">
+                    <h2>Tu Perfil y Acciones</h2>
+                    <p id="info-usuario-actual">Cargando usuario...</p>
+                    <div id="historial-prestamos">
+                        <h3>Material del usuario</h3>
+                        <!-- Aquí se actualizarán los materiales prestados -->
+                        <p id="lista-prestados">Ninguno</p>
+                    </div>
+
+                    <!-- Formulario de Préstamo/Devolución -->
+                    <form id="formulario-accion">
+                        <input type="text" id="titulo-accion" placeholder="Título del Material" required
+                               class="input-field">
+                        <div class="contenedor-botones">
+                            <button type="button" onclick="gestionarPrestamo2()" class="button btn-prestamo">
+                                Prestar
+                            </button>
+                            <button type="button" onclick="gestionarDevolucion2()" class="button btn-devolucion">
+                                Devolver
+                            </button>
+                        </div>
+                    </form>
+                       <h2 class="subtitulo-tarj">Historial</h2>
+                    <div id="area-registro" class="area-registro">
+                        <!-- Los mensajes se mostrarán aquí -->
+                    </div>
+                </div>
+
+       
+                <!-- Tarjeta de Agregar Material -->
+                <div class="tarjeta">
+                    <h2 class="subtitulo-tarj">Agregar Nuevo Material</h2>
+                    <form id="formulario-agregar-material">
+                        <input type="text" id="agregar-titulo" placeholder="Título" required class="input-field">
+                        <input type="text" id="agregar-autor" placeholder="Autor" required class="input-field">
+                        <input type="number" id="agregar-anio" placeholder="Año" required class="input-field">
+                        <select id="disponibilidad" id="agregar-disponibilidad" required class="input-field">
+                            <option value="" disabled selected>Selecciona disponibilidad</option>
+                            <option value="true">Disponible</option>
+                            <option value="false">Prestado</option>
+
+                        </select>
+                        <button type="submit" class="button btn-agregar">
+                            Agregar Libro
+                        </button>
+                    </form>
+                </div>
+            </div>
+                <!-- Columna 2: Listado de Materiales -->
+                <div class="tarjeta contenedor-materiales">
+                    <h2>Materiales Disponibles</h2>
+                    <div id="lista-materiales">
+                        <!-- Aquí se actualizarán los materiales -->
+                        <p class="carga-materiales">Cargando materiales...</p>
+                    </div>
+                </div>
+           
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
